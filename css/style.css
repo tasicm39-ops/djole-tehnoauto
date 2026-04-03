@@ -353,72 +353,11 @@ h2 {
     border-color 0.25s ease;
 }
 
-html.has-js .services-section:not(.is-visible) .service-card,
-html.has-js .process-section:not(.is-visible) .service-card {
-  opacity: 0;
-  transform: translateY(36px);
-  pointer-events: none;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease,
-    box-shadow 0.25s ease;
-}
-
-html.has-js .services-section.is-visible .service-card,
-html.has-js .process-section.is-visible .service-card {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  transition:
-    opacity 0.55s ease,
-    transform 0.55s ease,
-    box-shadow 0.25s ease;
-}
-
-html.has-js .services-section.is-visible .service-card:nth-child(1),
-html.has-js .process-section.is-visible .service-card:nth-child(1) {
-  transition-delay: 0s;
-}
-
-html.has-js .services-section.is-visible .service-card:nth-child(2),
-html.has-js .process-section.is-visible .service-card:nth-child(2) {
-  transition-delay: 0.12s;
-}
-
-html.has-js .services-section.is-visible .service-card:nth-child(3),
-html.has-js .process-section.is-visible .service-card:nth-child(3) {
-  transition-delay: 0.24s;
-}
-
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 38px rgba(21, 69, 128, 0.14);
   background-color: #eef6ff;
   border-color: #c8daf5;
-}
-
-html.has-js .services-section.is-visible .service-card:hover,
-html.has-js .process-section.is-visible .service-card:hover {
-  transform: translateY(-5px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.has-js .services-section:not(.is-visible) .service-card,
-  html.has-js .process-section:not(.is-visible) .service-card {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-}
-
-/* Uski ekran: sekcije su često više od viewporta — rezerva ako observer zakasni */
-@media (max-width: 900px) {
-  html.has-js .services-section:not(.is-visible) .service-card,
-  html.has-js .process-section:not(.is-visible) .service-card {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
 }
 
 .service-thumb {

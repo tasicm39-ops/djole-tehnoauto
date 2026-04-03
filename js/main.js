@@ -5,33 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     year.textContent = new Date().getFullYear();
   }
 
-  const animatedSections = [
-    document.getElementById("usluge"),
-    document.getElementById("kako"),
-  ].filter(Boolean);
-
-  if (animatedSections.length > 0 && window.IntersectionObserver) {
-    // threshold 0.5 je na uskim ekranima često nemoguć (sekcija je viša od viewporta),
-    // pa is-visible nikad ne legne — kartice ostaju nevidljive.
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0,
-        rootMargin: "60px 0px 80px 0px",
-      },
-    );
-    animatedSections.forEach((section) => observer.observe(section));
-  } else {
-    animatedSections.forEach((section) => section.classList.add("is-visible"));
-  }
-
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
