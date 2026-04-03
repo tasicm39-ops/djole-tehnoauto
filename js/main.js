@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ].filter(Boolean);
 
   if (animatedSections.length > 0 && window.IntersectionObserver) {
+    // threshold 0.5 je na uskim ekranima često nemoguć (sekcija je viša od viewporta),
+    // pa is-visible nikad ne legne — kartice ostaju nevidljive.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,7 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.5, rootMargin: "0px 0px -12% 0px" },
+      {
+        threshold: 0,
+        rootMargin: "60px 0px 80px 0px",
+      },
     );
     animatedSections.forEach((section) => observer.observe(section));
   } else {
