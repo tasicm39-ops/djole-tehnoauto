@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.djoletehnoauto.rs/sitemap.xml
+Sitemap: https://tasicm39-ops.github.io/djole-tehnoauto/sitemap.xml
